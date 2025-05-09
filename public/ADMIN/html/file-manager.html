@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <link rel="stylesheet" href="{{ asset('ADMIN/font-awesome/css/font-awesome.min.css') }}">
+    <style>
+        h1, h2, h3, h4, h5, h6 {font-family: 'Poppins', sans-serif;}
+        body { 
+            font-family: "Open Sans", sans-serif; 
+            overflow-x: hidden;
+        }
+        .link-to { text-decoration: none; }
+        .li-link{
+            color: black;
+        }
+        /*
+        main {
+            margin-left: 250px; 
+            padding: 20px;
+            height: 100vh; 
+            overflow-y: auto; 
+        }
+        .navbar{
+            z-index: 2;
+        }
+        .footer1{
+            z-index: 6;
+        }*/
+        main {
+            margin-top: 0; /* Atur nilai margin-top sesuai kebutuhan */
+            padding: 20px;
+            height: calc(100vh - 60px); /* Menyesuaikan tinggi halaman */
+            overflow-y: auto;
+        }
+        
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+    
+        .list-group-item {
+            margin-bottom: 10px; /* Tambahkan jarak antar elemen */
+            border: 1px solid #ddd; /* Tambahkan batas untuk visual yang lebih rapi */
+            border-radius: 5px; /* Buat sudut lebih halus */
+            padding: 15px; /* Sesuaikan padding */
+            background-color: #f9f9f9; /* Warna latar belakang yang lembut */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .list-group-item a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    
+        .list-group-item button {
+            font-size: 0.9em;
+            padding: 5px 15px;
+        }
+        
+        @media (max-width: 768px) {
+            button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 10px;
+            }
+             .list-group-item {
+                flex-direction: column; /* Atur elemen menjadi vertikal pada layar kecil */
+                align-items: flex-start;
+            }
+    
+            .list-group-item a {
+                margin-bottom: 10px; /* Tambahkan jarak antar link dan tombol */
+            }
+        }
+        .navbar-container{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- List Konten disini -->
+        
+        <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+            
+            <div class="container">
+                <h1>File Manager</h1>
+                <br>
+                <!-- File Manager -->
+            </div>
+
+        </main>
+    </div>
+</div>
+
+</body>
+</html>

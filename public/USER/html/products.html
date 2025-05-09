@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #E1E8EE;
+        }
+        .product img {
+            width: 100px;
+        }
+        .information {
+            flex-grow: 1;
+            padding: 0 10px;
+        }
+        .button-group {
+            display: inline;
+            gap: 10px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        main {
+            margin-top: 0;
+            padding: 20px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+            main{
+                font-size: 12px;
+            }
+            button {
+                font-size: 0.6em;
+                padding: 8px 10px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 4px;
+            }
+            .navbar-container h2 {
+                font-size: 1em;
+            }
+        }
+        .navbar-container {
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- List Konten disini -->
+            <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+                
+                <div class="button-group" style="margin-left:10%; display: flex; gap: 10px;">
+                    <button class="cart" onclick="window.location.href='/carts';" 
+                        style="border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+                        Lihat Keranjang
+                    </button>
+                
+                    <button class="payment" onclick="window.location.href='/payment/method';" 
+                        style="border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+                        Metode Pembayaran
+                    </button>         
+                </div>
+                
+                <!-- Products List -->
+            
+            </main>
+        </div>
+    </div>
+
+    <script src="path/to/jquery.min.js"></script>
+    <script>
+        $('.minus-btn').click(function() {
+            let $input = $(this).next('input');
+            let value = parseInt($input.val()) - 1;
+            $input.val(value > 1 ? value : 1);
+        });
+
+        $('.plus-btn').click(function() {
+            let $input = $(this).prev('input');
+            let value = parseInt($input.val()) + 1;
+            $input.val(value < 100 ? value : 100);
+        });
+
+        $('.like-btn').click(function() {
+            $(this).toggleClass('is-active');
+        });
+    </script>
+</body>
+</html>

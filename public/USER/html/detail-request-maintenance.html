@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif;}
+        body { 
+            font-family: "Open Sans", sans-serif; 
+        }
+        .w3-twothird { width: 100%; }
+        .table-row { cursor: pointer; }
+        @media (max-width: 768px) {
+            main{
+                font-size: 12px;
+            }
+            button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .navbar-container h2{
+                font-size: 1em;
+            }
+        }
+        .navbar-container{
+            padding-left: 5%;
+        }
+        .request {
+            display: block;
+            width: 50%;
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .request header {
+            text-align: center;
+            font-weight: bold;
+            color: #ff5722;
+            font-size: 0.9rem; /* Font lebih kecil */
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .request main h6, .request main p {
+            font-size: 0.8rem; /* Font lebih kecil */
+            margin: 8px 0;
+        }
+
+        .request main img {
+            width: 100%;
+            height: auto;
+            margin: 8px 0;
+        }
+
+        .request main button {
+            display: block;
+            margin: 15px auto 0;
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem; 
+        }
+
+        .request main button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- List Konten disini -->
+        <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+            
+            <br>
+            <div style="margin: auto;" class="request">
+                <header>Request</header>
+                    <main>
+                        <!-- Messages -->
+                    </main>
+            </div>
+            
+        </main>
+    </div>
+</div>
+
+
+<script src="path/to/jquery.min.js"></script>
+<script src="path/to/popper.min.js"></script>
+<script src="path/to/bootstrap.min.js"></script>
+</body>
+</html>

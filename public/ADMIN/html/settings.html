@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif;}
+        body {
+            font-family: "Open Sans", sans-serif;
+        }
+        .form-container {
+            max-width: 80%;
+            height: auto;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .navbar-container h2{
+                font-size: 1em;
+            }
+        }
+        .navbar-container{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+
+    <div class="container-fluid">
+    <div class="row">
+        <!-- List Konten disini -->
+        <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+        <div class="form-container">
+            <h2 class="mb-4">Edit Account Profile</h2>
+            <form method="POST" action="/settings">
+                <!--userid-->
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <!--username-->
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <!--email-->
+                </div>
+                <div class="mb-3">
+                    <label for="current-password" class="form-label">Current Password</label>
+                    <input type="current-password" class="form-control" id="current-password" name="current-password" placeholder="Enter current password">
+                </div>
+                <div class="mb-3">
+                    <label for="new-password" class="form-label">New Password</label>
+                    <input type="new-password" class="form-control" id="new-password" name="new-password" placeholder="Enter new password">
+                </div>
+                <!--<div class="mb-3">-->
+                <!--    <label for="profile-picture" class="form-label">Profile Picture</label>-->
+                <!--    <input type="file" class="form-control" id="profile-picture">-->
+                <!--</div>-->
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+        </main>
+    </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

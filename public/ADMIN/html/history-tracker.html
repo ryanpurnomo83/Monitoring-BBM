@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif;}
+        body{
+            font-family: "Open Sans", sans-serif;
+        }
+        .history-window {
+            padding: 2%;
+        }
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background: #fff;
+            margin-right: 20px;
+        }
+        th, td {
+            padding: 12px;
+            padding-left: 50px;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .button1{
+            border-radius: 5px;
+            margin-left: 76%;
+        }
+        @media (max-width: 768px) {
+            button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .navbar-container h2{
+                font-size: 1em;
+            }
+        }
+        .navbar-container{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- List Konten disini -->
+            
+            <main class="col-md-9 col-lg-10 ml-sm-auto px-4 history-window">
+                <h4 class="text-center">History Tracker</h4>
+                <br>
+                <button class="button1"  onclick="window.location.href='/delete';">
+                    Hapus Data Kunjungan
+                </button><br><br>
+                <div class="container">
+                    <table>
+                        <tr></tr>
+                        <p>makan</p>
+                    </table>
+                </div>
+            </main>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('button').click(function() {
+            var message = $('textarea').val();
+            if (message) {
+                $('.message-box').append('<div class="message sent"><div class="message-content">' + message + '</div></div>');
+                $('textarea').val('');
+                $('.message-box').scrollTop($('.message-box')[0].scrollHeight);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

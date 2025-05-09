@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ asset('ADMIN/bootstrap/css/bootstrap.min.css') }}"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        h1, h2, h3, h4, h5, h6 {font-family: 'Poppins', sans-serif;}
+        .modal {
+            display: block; /* Menampilkan modal sebagai contoh */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 45%;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .cancelbtn, .signupbtn {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .navbar-container h2{
+                font-size: 1em;
+            }
+            .form{
+                width: 70%;
+            }
+        }
+        .navbar-container{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="navbar-container">
+                <h2 style="color:white;">Monitoring BBM</h2>
+            </div>
+    </nav>
+    <div id="id01" class="modal">
+        <form id="signupForm" class="modal-content form" action="/admin/status" method="POST">
+          <h1 hidden>makan</h1>
+          <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <input type="hidden" name="status" value="0">
+    
+            <div class="form-group">
+                <label for="username"><b>Username</b></label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+            </div>
+      
+            <div class="form-group">
+                <label for="email"><b>Email</b></label>
+                <input type="text" class="form-control" placeholder="Enter Email" name="email" required>
+            </div>
+      
+            <div class="form-group">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+            </div>
+            
+            <br>
+            
+            <!--<div class="form-group form-check">-->
+            <!--    <label>-->
+            <!--      <input type="checkbox" class="form-check-input" checked="checked" name="remember"> Remember me-->
+            <!--    </label>-->
+            <!--</div>-->
+      
+            <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>-->
+      
+            <div class="clearfix">
+              <button type="submit" class="btn btn-primary signupbtn" style="background-color: #FFC107;">Sign Up</button>
+              <br><br>
+              <button type="button" onclick="window.location.href='/';" class="btn btn-danger cancelbtn" style="background-color: #FF5656;">Cancel</button>
+            </div>
+          </div>
+        </form>
+    </div>
+
+    <script src="{{ asset('ADMIN/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

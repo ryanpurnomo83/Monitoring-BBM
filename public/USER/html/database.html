@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BBM TBB Monitoring</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+  <link rel="stylesheet" href="path/to/bootstrap.min.css"> <!-- Ganti path sesuai dengan lokasi Bootstrap yang terdownload -->
+  <style>
+    h1, h2, h3, h4, h5, h6{
+        font-family: "Poppins", sans-serif;  
+    }
+    body {
+      font-family: "Open Sans", sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+        margin-top: 0; 
+        padding: 20px;
+        height: calc(100vh - 60px); 
+        overflow-y: auto;
+    }
+    .containall {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        margin-top: 20px;
+    }
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    th {
+        background-color: #333;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:hover {
+        background-color: #ddd;
+    }
+    .button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 30px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .button:hover {
+        background-color: #555;
+    }
+    .footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .sql-form textarea {
+        width: 100%;
+    }
+     #sqlFormContainer {
+        background-color: #f8f9fa; /* Warna abu-abu terang */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Gaya untuk textarea */
+    #sqlFormContainer textarea {
+        resize: none;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+    }
+
+    /* Gaya untuk tombol */
+    #sqlFormContainer .btn {
+        background-color: #007bff; /* Warna biru */
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    #sqlFormContainer .btn:hover {
+        background-color: #0056b3; /* Warna biru gelap */
+        color: #fff;
+    }
+    @media (max-width: 768px) {
+            button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .navbar-container h2{
+                font-size: 1em;
+            }
+        }
+    .navbar-container{
+        padding-left: 5%;
+    }
+  </style>
+</head>
+<body class="bg-light">
+    
+  <!-- Navbar -->
+    
+  <div class="container-fluid">
+    <div class="row">
+        <!-- List Konten disini -->
+        <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+            <br>
+            <h1 class="text-center">Database</h1>
+        <div class="container mt-4">
+            <div class="containall">
+              <div class="mb-3" style="padding-left:10px; padding-top: 2px;">
+                <h2 style="color:black;">Query Form</h2>
+              </div>
+              
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label for="fromDate">From Date</label>
+                  <input type="date" class="form-control" id="fromDate">
+                </div>
+                <div class="col-md-4">
+                  <label for="toDate">To Date</label>
+                  <input type="date" class="form-control" id="toDate">
+                </div>
+                <div class="col-md-4">
+                  <br>
+                  <button class="btn btn-primary w-100" onclick="toggleSQLForm()">SQL</button>
+                </div>
+              </div>
+        
+              <div class="container" id="sqlFormContainer" style="display:none;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sql-form">
+                            <form id="sqlForm">
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="sqlQuery" name="sqlQuery" rows="5" placeholder="Enter your SQL query here..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Submit SQL Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <!-- replace table -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+        </div>
+        </main>
+    </div>
+  </div>
+
+  
+
+  <br>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function toggleSQLForm() {
+    var sqlForm = document.getElementById("sqlFormContainer");
+    if (sqlForm.style.display === "none" || sqlForm.style.display === "") {
+        sqlForm.style.display = "block";
+    } else {
+        sqlForm.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

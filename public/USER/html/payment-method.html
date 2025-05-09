@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #E1E8EE;
+        }
+        .product img {
+            width: 100px;
+        }
+        .information {
+            flex-grow: 1;
+            padding: 0 10px;
+        }
+        .button-group {
+            display: inline;
+            gap: 10px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        main {
+            margin-top: 0;
+            padding: 20px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        .container{
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+        @media (max-width: 768px) {
+            *{
+                font-size: 10px;
+            }
+            button {
+                font-size: 0.6em;
+                padding: 8px 10px;
+            }
+            .button-group {
+                flex-direction: row;
+                gap: 4px;
+            }
+            .navbar-container h2 {
+                font-size: 1em;
+            }
+        }
+        .navbar-container {
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+
+    <!--<div class="container mt-5">-->
+    <!--<br>-->
+    <!--<h1>Pilih Metode Pembayaran</h1>-->
+    <!--<form>-->
+    <!--    @csrf-->
+    <!--    <div class="form-check">-->
+    <!--        <input class="form-check-input" type="radio" name="payment_method" value="credit_card" id="credit_card">-->
+    <!--        <label class="form-check-label" for="credit_card">-->
+    <!--            Kartu Kredit/Debit-->
+    <!--        </label>-->
+    <!--    </div>-->
+    <!--    <div class="form-check">-->
+    <!--        <input class="form-check-input" type="radio" name="payment_method" value="bank_transfer" id="bank_transfer">-->
+    <!--        <label class="form-check-label" for="bank_transfer">-->
+    <!--            Transfer Bank-->
+    <!--        </label>-->
+    <!--    </div>-->
+    <!--    <div class="form-check">-->
+    <!--        <input class="form-check-input" type="radio" name="payment_method" value="gopay" id="gopay">-->
+    <!--        <label class="form-check-label" for="gopay">-->
+    <!--            GoPay-->
+    <!--        </label>-->
+    <!--    </div>-->
+    <!--    <button type="submit" class="btn btn-primary mt-3">Simpan</button>-->
+    <!--</form>-->
+    <!--<br>-->
+    <!--</div>-->
+</body>
+</html>

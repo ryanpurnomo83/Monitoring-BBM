@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="{{ asset('ADMIN/font-awesome/css/font-awesome.min.css') }}">
+    <style>
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    main {
+        margin-top: 0; 
+        padding: 20px;
+        height: calc(100vh - 60px); 
+        overflow-y: auto;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .table-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background-color: #333;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        margin: 10px;
+        font-size: 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #555;
+    }
+
+    .footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .rekap-section {
+        display: none;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        main{
+            font-size: 12px;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            font-size: 0.9em;
+            padding: 8px;
+        }
+
+        .button {
+            font-size: 16px;
+            padding: 8px 15px;
+        }
+
+        .navbar-container h2 {
+            font-size: 1.2em;
+        }
+    }
+
+    @media (max-width: 576px) {
+        th, td {
+            font-size: 0.8em;
+            padding: 6px;
+        }
+
+        .button {
+            font-size: 14px;
+            padding: 6px 10px;
+        }
+    }
+
+    .navbar-container {
+        padding-left: 5%;
+    }
+
+    /* Additional Styling for Specific Elements */
+    .table-container {
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for table container */
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    /* Custom Styling for Table Header */
+    th {
+        font-size: 1.1em;
+        font-weight: 500;
+        text-transform: none;
+    }
+
+    /* Custom Styling for Table Rows */
+    td {
+        font-size: 0.95em;
+        font-weight: 400;
+    }
+
+    /* Custom Styling for Buttons */
+    .button {
+        transition: all 0.3s ease;
+    }
+
+    .button:active {
+        transform: scale(0.98); 
+    }
+</style>
+
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- List Konten disini -->
+            <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+                <br>
+                <h1 style="text-align:center;">Data Monitoring Live</h1>
+                <br>
+                <div id="live-K1" class="table-container">
+                    <div id="table-container">
+                        <!-- Tabel akan dibuat di sini -->
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <!--<button class="button" onclick="window.location.href='/stop';">-->
+                    <!--    Stop Data Streaming-->
+                    <!--</button>-->
+    
+                    <!--<button class="button" onclick="window.location.href='/truncate';">-->
+                    <!--    Hapus Data Monitoring Live-->
+                    <!--</button>-->
+                    
+                    <!-- Transportation Dashboard -->
+                </div>
+    
+                <div id="rekap-K1" class="rekap-section container">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NIK</th>
+                                    <th>Level</th>
+                                    <th>Jarak</th>
+                                    <th>Waktu</th>
+                                </tr>
+                                <!-- Header -->
+                            </thead>
+                            <tbody>
+                                <!-- Rekap Data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

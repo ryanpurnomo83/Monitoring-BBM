@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #E1E8EE;
+        }
+        .product img {
+            width: 100px;
+        }
+        .information {
+            flex-grow: 1;
+            padding: 0 10px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow-x: auto; /* Enable horizontal scroll if needed */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .button-group {
+            display: inline;
+            gap: 10px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        main {
+            margin-top: 0;
+            padding: 20px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        .responsive-input {
+            width: 100%; /* Menyesuaikan dengan lebar kontainer */
+            max-width: 50px; /* Menetapkan lebar maksimum agar tidak terlalu besar */
+            box-sizing: border-box; /* Memastikan padding dan border dimasukkan dalam lebar elemen */
+            padding: 5px; /* Padding agar terlihat lebih baik */
+            font-size: 1rem; /* Ukuran font yang nyaman untuk tampilan */
+        }
+        /* Responsive Design for Table */
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 14px;
+                padding: 8px;
+            }
+            th {
+                font-size: 12px;
+            }
+            td img {
+                max-width: 50px; /* Menyesuaikan gambar agar lebih kecil di layar kecil */
+            }
+            .button-group {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+        .navbar-container {
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+
+    <div class="container-fluid">
+        <div class="row">
+            
+            <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+                <br>
+                <div id="live-K1" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Process</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <!-- checkout list -->
+                            <!-- <tr>-->
+                            <!--    <td><img src="https://monitoring-bbm.my.id/public/USER/image/lora.jpg" alt="LoRa Wireless Transceiver" width="10%"> LoRa Wireless Transceiver</td>-->
+                            <!--    <td class="price-per-unit">Rp 3.760.000</td>-->
+                            <!--    <td><input type="number" class="responsive-input" value="2" min="1" oninput="updateTotal(this)"></td>-->
+                            <!--    <td class="total-price">Rp 7.520.000</td>-->
+                            <!-- </tr>-->
+                            <!--<br>-->
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </main>
+        </div>
+    </div>
+    <script>
+        function updateTotal(inputElement) {
+            const pricePerUnit = parseInt(inputElement.closest('tr').querySelector('.price-per-unit').textContent.replace(/[^0-9]/g, ''));
+            const quantity = parseInt(inputElement.value);
+            console.log(pricePerUnit);
+            const totalPrice = pricePerUnit * quantity;
+            const formattedTotal = formatCurrency(totalPrice);
+            inputElement.closest('tr').querySelector('.total-price').textContent = formattedTotal;
+        }
+        function formatCurrency(amount) {
+            return 'Rp ' + amount.toLocaleString('id-ID');
+        }
+    </script>
+</body>
+</html>

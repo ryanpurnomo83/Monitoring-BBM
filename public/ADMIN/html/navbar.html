@@ -1,0 +1,59 @@
+<style>
+    .navbar-container h2{
+        margin-top: 5px;
+    }
+    .navbar-container-2 .nav-item {
+        padding: 5px 10px; 
+    }
+    ul{
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+    }
+    @media (max-width: 768px) {
+        .navbar-container h2{
+            margin-top: 10px;
+        }
+        .navbar-container h2{
+            font-size: 1em;
+        }
+        .div-bawah img {
+            max-width: 80%;
+        }
+        .navbar-container-2 {
+            font-size: 0.9em;
+            padding-left: 0; 
+        }
+        .navbar-container-2 .nav-item {
+            padding: 5px 5px; 
+        }
+        .navbar-container-2 img {
+            width: 20px; 
+        }
+        .navbar-container-2 li {
+            font-size: 0.8em; 
+        }
+        li{
+            display: inline;
+        }
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-container">
+        <h2 style="color:white;">Monitoring BBM</h2>
+    </div>
+    <ul class="navbar ms-auto d-flex navbar-container-2" style="margin-right: 5%;">
+        <li class="nav-item text-white">
+            <img src="https://monitoring-bbm.my.id/public/USER/image/language0.svg" width="30" alt="Language Icon" /> 
+        </li>
+            
+        <li class="nav-item text-white">
+            News
+        </li>
+            
+        <li class="nav-item text-white" onclick="window.location.href='/';">
+            <img src="https://monitoring-bbm.my.id/public/USER/image/log-out0.svg" width="30" alt="Log Out Icon" /><span style="padding-left: 10px;">Log Out</span>
+        </li>
+    </ul>
+</nav>

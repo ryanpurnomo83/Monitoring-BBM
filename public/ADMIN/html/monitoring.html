@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="{{ asset('ADMIN/font-awesome/css/font-awesome.min.css') }}">
+    <style>
+        h1, h2, h3, h4, h5, h6 {font-family: 'Poppins', sans-serif;}
+        body {
+            font-family: "Open Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .table-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow-x: auto; /* Enable horizontal scroll if needed */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .rekap-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .table-container {
+                width: 100%;
+                overflow-x: auto; /* Enable scroll for small screens */
+            }
+
+            table {
+                width: 100%; /* Make sure the table still takes up full width */
+            }
+
+            th, td {
+                font-size: 0.9em; /* Smaller font for mobile */
+                padding: 8px;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+
+            .navbar-container h2 {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            th, td {
+                font-size: 0.8em; /* Further decrease font size */
+                padding: 6px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+        }
+        .navbar-container{
+            padding-left: 5%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- List Konten disini -->
+            <main class="col-md-9 col-lg-10 ml-sm-auto px-4">
+                <br>
+                <h1 style="text-align:center;">Data Monitoring Live</h1>
+                <br>
+                <div id="live-K1" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NIK</th>
+                                <th>Level</th>
+                                <th>Jarak</th>
+                                <th>Waktu</th>
+                                <th>Action</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Monitoring Data -->
+                            <!-- Header Suggestion -->
+                            <br>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <!--<button class="button" onclick="window.location.href='/stop';">-->
+                    <!--    Stop Data Streaming-->
+                    <!--</button>-->
+    
+                    <!--<button class="button" onclick="window.location.href='/truncate';">-->
+                    <!--    Hapus Data Monitoring Live-->
+                    <!--</button>-->
+                    
+                    <!-- Transportation Dashboard -->
+                </div>
+    
+                <div id="rekap-K1" class="rekap-section container">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NIK</th>
+                                    <th>Level</th>
+                                    <th>Jarak</th>
+                                    <th>Waktu</th>
+                                </tr>
+                                <!-- Header -->
+                            </thead>
+                            <tbody>
+                                <!-- Rekap Data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
